@@ -17,7 +17,24 @@ Turn the workflow map into formal stage contracts and verify the dependency grap
 4. Identify canonical sources: where does each piece of information live? (one home per fact)
 5. Check for circular references: draw the dependency graph and verify it flows one way only
 6. Verify every stage's output is consumed by at least one downstream stage (or is the final output)
-7. Produce the contracts document with a dependency diagram
+7. **[Checkpoint]** -- Present the dependency diagram and contracts to the user. Ask: Does the flow make sense? Any missing connections?
+8. Run the audit checks below. If any fail, revise before saving.
+9. Produce the contracts document with a dependency diagram
+
+## Checkpoints
+
+| After Step | Agent Presents | Human Decides |
+|------------|---------------|---------------|
+| 6 | Dependency diagram and draft contracts for all stages | Whether the dependency flow and contract definitions are correct |
+
+## Audit
+
+| Check | Pass Condition |
+|-------|---------------|
+| No circular references | Dependency graph flows in one direction only |
+| Output consumption | Every stage's output is read by at least one downstream stage or is the final deliverable |
+| Contract completeness | Every stage has Inputs, Process, and Outputs sections with no empty fields |
+| Canonical sources | No piece of information is defined as authoritative in more than one stage |
 
 ## Outputs
 

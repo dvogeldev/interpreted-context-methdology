@@ -28,7 +28,17 @@ Build .pptx files from session outlines using the html2pptx pipeline. One JS fil
    - Adds charts/tables to placeholder areas using PptxGenJS API
    - Saves to `output/[session-slug]/[session-slug].pptx`
 9. Run `node [session-slug].js` to generate the .pptx
-10. Repeat for each session in the curriculum
+10. Run the audit checks below. If any fail, fix and re-run the JS file.
+11. Repeat for each session in the curriculum
+
+## Audit
+
+| Check | Pass Condition |
+|-------|---------------|
+| Render success | JS file runs without errors and produces a .pptx file |
+| Slide count match | Generated .pptx has the same number of slides as the outline |
+| File structure | Output folder contains: HTML files, JS file, images/ (if needed), .pptx |
+| Font compliance | Only web-safe fonts used in HTML (no custom font references) |
 
 ## Outputs
 

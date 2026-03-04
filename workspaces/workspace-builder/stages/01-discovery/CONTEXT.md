@@ -28,7 +28,24 @@ Understand the domain workflow through conversation with the user.
    c. Present candidates to the user with a brief description of what each skill provides
    d. Let the user pick which skills to bundle into the workspace
    e. Note: skills can replace custom reference docs and prerequisites when they cover the same ground (e.g., a pptx skill bundles scripts that would otherwise need a separate install step)
-9. Write the workflow map summarizing everything discovered.
+9. **[Checkpoint]** -- Present the workflow map draft to the user. Ask: Are all stages captured? Any missing inputs or outputs? Any stages to combine or split?
+10. Run the audit checks below. If any fail, revise before saving.
+11. Write the workflow map summarizing everything discovered.
+
+## Checkpoints
+
+| After Step | Agent Presents | Human Decides |
+|------------|---------------|---------------|
+| 8 | Draft workflow map: all stages with inputs/outputs, shared context, variables, tools, skills | Whether the stage breakdown, handoff points, and shared context are correct |
+
+## Audit
+
+| Check | Pass Condition |
+|-------|---------------|
+| Stage clarity | Every stage has a clear single responsibility and a named output artifact |
+| Input/output chain | Every stage's inputs are either user-provided or produced by a prior stage |
+| Shared context identified | Cross-stage resources (brand, design, audience) are listed separately from stage-specific references |
+| Variable coverage | Every user-specific detail is captured as a named placeholder variable |
 
 ## Outputs
 

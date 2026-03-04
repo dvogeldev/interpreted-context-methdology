@@ -39,7 +39,19 @@ Generate the complete workspace folder structure, CONTEXT.md files, and placehol
     - Update stage CONTEXT.md Inputs tables to reference `../../skills/[name]/SKILL.md` instead of deleted reference files
 11. If tools were identified that require system-level installation (Node.js, Python, LibreOffice), write a setup guide in the relevant stage's `references/` folder. Tools bundled inside skills do not need separate setup guides.
 12. Add .gitkeep files in all output/ directories
-13. Write everything to output/
+13. Run the audit checks below. If any fail, fix before saving.
+14. Write everything to output/
+
+## Audit
+
+| Check | Pass Condition |
+|-------|---------------|
+| Folder structure | Every stage has CONTEXT.md, output/, and references/ |
+| Contract fidelity | Every stage CONTEXT.md matches the contracts from Stage 02 |
+| Placeholder syntax | All placeholders use `{{SCREAMING_SNAKE_CASE}}` format |
+| .gitkeep coverage | Every output/ directory contains a .gitkeep file |
+| CONTEXT.md size | No CONTEXT.md file exceeds 80 lines |
+| Naming conventions | All folders and files use lowercase-with-hyphens |
 
 ## Outputs
 

@@ -22,8 +22,24 @@ Organize extracted content into a structured course plan with modules, sessions,
 6. Write 2-3 learning objectives per session (what the learner will be able to do after)
 7. Allocate specific content chunks to each session
 8. Estimate time per session based on content density
-9. Ask the user to review the curriculum structure
-10. Save the curriculum document
+9. **[Checkpoint]** -- Present the curriculum structure to the user. Ask: Does the progression make sense? Any sessions to add, remove, or reorder?
+10. Run the audit checks below. If any fail, revise before saving.
+11. Save the curriculum document
+
+## Checkpoints
+
+| After Step | Agent Presents | Human Decides |
+|------------|---------------|---------------|
+| 8 | Full curriculum: modules, sessions, objectives, content allocation, time estimates | Whether the structure, progression, and session balance are right |
+
+## Audit
+
+| Check | Pass Condition |
+|-------|---------------|
+| Pedagogical order | Foundational concepts appear before concepts that depend on them |
+| Session balance | No session has fewer than 3 or more than 7 content chunks allocated |
+| Objective clarity | Every learning objective starts with an action verb and describes a measurable outcome |
+| Content coverage | Every extracted chunk is allocated to at least one session |
 
 ## Outputs
 

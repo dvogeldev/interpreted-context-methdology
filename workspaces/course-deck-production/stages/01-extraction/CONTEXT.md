@@ -19,8 +19,24 @@ Pull structured teaching content from unstructured source material.
 4. Tag each chunk with topic area and complexity level (intro, intermediate, advanced)
 5. Group chunks by topic affinity
 6. Add source citations where the material came from
-7. Ask the user to review the extraction for accuracy and completeness
-8. Save the structured extraction document
+7. **[Checkpoint]** -- Present the extracted content to the user for review. Ask: Is anything missing? Are tags accurate? Any content to remove?
+8. Run the audit checks below. If any fail, revise before saving.
+9. Save the structured extraction document
+
+## Checkpoints
+
+| After Step | Agent Presents | Human Decides |
+|------------|---------------|---------------|
+| 6 | Complete extraction with tagged, grouped chunks and source citations | Whether content is accurate, complete, and correctly categorized |
+
+## Audit
+
+| Check | Pass Condition |
+|-------|---------------|
+| Content coverage | Every major topic from the source material has at least one chunk |
+| Tag accuracy | Each chunk's complexity tag (intro/intermediate/advanced) matches its content |
+| Source citations | Every chunk traces back to a specific source document or section |
+| Chunk granularity | No chunk covers more than one distinct concept |
 
 ## Outputs
 

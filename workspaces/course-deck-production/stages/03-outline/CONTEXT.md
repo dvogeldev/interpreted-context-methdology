@@ -27,8 +27,24 @@ Create a detailed slide-by-slide outline for each session in the curriculum.
    d. Add visual direction (which colors, layout variant, chart/image needed)
    e. Flag any slide that needs a chart, table, or image (becomes a `class="placeholder"` in Stage 04)
 5. Verify no single-column chart-below-text layouts (pptx SKILL.md constraint)
-6. Ask the user to review outlines before generation
-7. Save one outline file per session
+6. **[Checkpoint]** -- Present the outlines to the user. Ask: Do the slide flows make sense? Any slides to add, remove, or restructure?
+7. Run the audit checks below. If any fail, revise before saving.
+8. Save one outline file per session
+
+## Checkpoints
+
+| After Step | Agent Presents | Human Decides |
+|------------|---------------|---------------|
+| 5 | Complete slide outlines for all sessions with types, content, and visual direction | Whether slide flow, content density, and visual direction are right |
+
+## Audit
+
+| Check | Pass Condition |
+|-------|---------------|
+| Slide count | Each session has 15-25 slides |
+| Layout compliance | No single-column chart-below-text layouts (pptx skill constraint) |
+| Visual direction | Every slide has a specified color scheme and layout variant |
+| Content completeness | Every learning objective from the curriculum is addressed by at least one slide |
 
 ## Outputs
 

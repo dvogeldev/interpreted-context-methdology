@@ -8,7 +8,7 @@ This file is a pointer, not a copy. Do not duplicate content from CONVENTIONS.md
 
 The most important conventions for building a new workspace:
 
-- **Four-layer routing**: CLAUDE.md (Layer 0) -> CONTEXT.md (Layer 1) -> Stage CONTEXT.md (Layer 2) -> Content files (Layer 3). See "Four-Layer Routing Architecture" in `/_core/CONVENTIONS.md`.
+- **Five-layer routing**: CLAUDE.md (Layer 0) -> CONTEXT.md (Layer 1) -> Stage CONTEXT.md (Layer 2) -> Reference material (Layer 3) -> Working artifacts (Layer 4). Layer 3 is persistent context (design systems, voice rules, conventions). Layer 4 is per-run context (previous stage outputs, source material). See "Five-Layer Routing Architecture" in `/_core/CONVENTIONS.md`.
 
 - **Stage contracts**: Every stage CONTEXT.md has Inputs, Process, Outputs sections. No exceptions. See "Pattern 1: Stage Contracts" in `/_core/CONVENTIONS.md`.
 

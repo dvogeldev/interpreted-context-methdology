@@ -4,26 +4,31 @@ The rules for building and maintaining MWP workspaces. This is the canonical sou
 
 ---
 
-## Four-Layer Routing Architecture
+## Five-Layer Routing Architecture
 
 Agents read down the layers. They stop as soon as they have what they need.
 
 ```
-Layer 0: CLAUDE.md        -> "Where am I?"       (always loaded, ~800 tokens)
-Layer 1: CONTEXT.md       -> "Where do I go?"     (read on entry, ~300 tokens)
-Layer 2: Stage CONTEXT.md -> "What do I do?"      (read per-task, ~200-500 tokens)
-Layer 3: Content files    -> "What do I need?"    (loaded selectively, varies)
+Layer 0: CLAUDE.md           -> "Where am I?"            (always loaded, ~800 tokens)
+Layer 1: CONTEXT.md          -> "Where do I go?"          (read on entry, ~300 tokens)
+Layer 2: Stage CONTEXT.md    -> "What do I do?"            (read per-task, ~200-500 tokens)
+Layer 3: Reference material  -> "What rules apply?"        (loaded selectively, varies)
+Layer 4: Working artifacts   -> "What am I working with?"  (loaded selectively, varies)
 ```
 
 **Layer 0 -- CLAUDE.md** is auto-loaded by Claude Code into every conversation. It contains the folder map, naming conventions, and a routing table that points to workspace-level files. One per workspace.
 
 **Layer 1 -- Top-level CONTEXT.md** is the first thing an agent reads when entering the workspace. It contains a task routing table that maps task types to specific stage folders. One per workspace.
 
-**Layer 2 -- Stage CONTEXT.md files** live inside each stage folder. They contain the scope definition, what-to-load tables, and step-by-step process. One per stage.
+**Layer 2 -- Stage CONTEXT.md files** live inside each stage folder. They contain the scope definition, what-to-load tables, and step-by-step process. One per stage. Layer 2 is the control point of the system -- its Inputs table determines exactly which files from Layers 3 and 4 the agent loads.
 
-**Layer 3 -- Content files** are the actual reference material (voice rules, templates, specs, design systems). They are loaded only when a Layer 2 CONTEXT.md table says to load them. Agents load specific sections, not entire files, whenever possible.
+**Layer 3 -- Reference material** is the persistent context: design systems, voice rules, build conventions, style guides, domain knowledge bundled as skill files. These files are configured once during workspace setup and remain stable across every run of the pipeline. They live in `references/` folders within stages, in workspace-level configuration folders (like `brand-vault/` or `design-system/`), in `shared/`, and in `skills/`. Larger reference collections can include their own CONTEXT.md routing files to help agents navigate within the collection.
 
-A rendering agent might only need Layers 0-1. A script-writing agent reads down to Layer 3. No agent reads everything.
+**Layer 4 -- Working artifacts** are the per-run context: previous stage outputs, user-provided source material, anything specific to this particular run. These files are produced and consumed during execution and change every time the pipeline runs. They live in `output/` folders.
+
+The distinction between Layers 3 and 4 matters because they require different things from the model. Layer 3 material needs to be internalized as constraints and patterns -- write like this, use these colors, follow these conventions. Layer 4 material needs to be processed as input -- transform this research into a script, convert this script into a specification. Layer 3 is the factory. Layer 4 is the product.
+
+A rendering agent might only need Layers 0 through 2. A script-writing agent reads down to Layer 4 to access both voice rules (Layer 3) and source material (Layer 4). No agent reads everything.
 
 Every token of irrelevant context is a token of diluted attention. Workspace CLAUDE.md files should explicitly map each task to its minimal required files. Loading more context does not make output better. It makes it worse.
 

@@ -50,6 +50,16 @@ Pipeline Status: workspace-builder
 | Design the onboarding questionnaire | `stages/04-questionnaire-design/CONTEXT.md` |
 | Validate the workspace | `stages/05-validation/CONTEXT.md` |
 
+## What to Load
+
+| Task | Load These | Do NOT Load |
+|------|-----------|-------------|
+| Discover workflow | `references/conventions-reference.md`, `references/examples/script-to-animation-summary.md` | `stages/02-mapping/` through `stages/05-validation/` |
+| Formalize contracts | `stages/01-discovery/output/`, `references/conventions-reference.md` | `references/examples/`, `stages/03-scaffolding/` through `stages/05-validation/` |
+| Generate scaffold | `stages/02-mapping/output/`, `references/conventions-reference.md`, `/_core/templates/*`, `/_core/placeholder-syntax.md` | `stages/01-discovery/`, `references/examples/` |
+| Design questionnaire | `stages/01-discovery/output/`, scaffolded workspace from stage 03, `/_core/templates/questionnaire-template.md` | `stages/02-mapping/`, `references/examples/` |
+| Validate workspace | Scaffolded workspace from stage 03, `stages/04-questionnaire-design/output/`, `/_core/CONVENTIONS.md` | `stages/01-discovery/`, `stages/02-mapping/`, `references/examples/` |
+
 ## Stage Handoffs
 
 Each stage writes its output to its own `output/` folder. The next stage reads from there. If you edit an output file between stages, the next stage picks up your edits.

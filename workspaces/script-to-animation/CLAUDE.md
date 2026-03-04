@@ -62,6 +62,14 @@ Pipeline Status: script-to-animation
 | Build Remotion code | `stages/03-build/CONTEXT.md` |
 | Configure this workspace | `setup/questionnaire.md` |
 
+## What to Load
+
+| Task | Load These | Do NOT Load |
+|------|-----------|-------------|
+| Write a script | `brand-vault/voice-rules.md`, `brand-vault/identity.md`, `stages/01-script/references/*`, `shared/platform-specs.md` | `skills/remotion-best-practices/`, `stages/02-spec/references/`, `stages/03-build/references/` |
+| Create animation spec | `stages/01-script/output/`, `stages/02-spec/references/*`, `skills/frontend-design/SKILL.md` | `brand-vault/`, `stages/01-script/references/`, `stages/03-build/references/`, `skills/remotion-best-practices/` |
+| Build Remotion code | `stages/02-spec/output/`, `stages/03-build/references/*`, `skills/remotion-best-practices/SKILL.md`, `stages/02-spec/references/design-system.md` | `brand-vault/`, `stages/01-script/`, `stages/02-spec/references/spec-format.md`, `stages/02-spec/references/animation-guide.md` |
+
 ## Stage Handoffs
 
 Each stage writes its output to its own `output/` folder. The next stage reads from there. If you edit an output file between stages, the next stage picks up your edits. This is the primary way to steer the pipeline.

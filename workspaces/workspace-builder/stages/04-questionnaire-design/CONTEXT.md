@@ -31,7 +31,17 @@ Build the onboarding questionnaire that hydrates the new workspace's placeholder
 9. If the workspace has voice/style rules with derived fields, add a two-pass process: after the agent populates rules from answers, it presents them to the user for review before finalizing. This catches misinterpretations.
 10. Verify every system-level placeholder has a corresponding question
 11. Verify per-run placeholders are handled by stage CONTEXT.md files, not the questionnaire
-12. Write the questionnaire.md
+12. Run the audit checks below. If any fail, revise before saving.
+13. Write the questionnaire.md
+
+## Audit
+
+| Check | Pass Condition |
+|-------|---------------|
+| Placeholder coverage | Every system-level placeholder in the workspace has a corresponding question |
+| Per-run separation | No per-run variables appear in the questionnaire (they belong in stage CONTEXT.md files) |
+| Flat structure | All questions are in a single numbered list with no category groupings |
+| Defaults present | Every question has a sensible default or example |
 
 ## Outputs
 
