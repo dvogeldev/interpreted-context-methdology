@@ -1,4 +1,4 @@
-# Interpreted Context Methdolog (ICM)
+# Interpretable Context Methdolog (ICM)
 
 Folder structure as agent architecture.
 
@@ -14,7 +14,7 @@ There are genuinely good agentic frameworks available today. CrewAI, LangChain, 
 
 For practitioners whose workflows are sequential and need human review at each step, the control surface can be much simpler.
 
-MWP is built on an observation that is almost too simple to write down: if the prompts and context for each stage of a workflow already exist as files in a well-organized folder hierarchy, you do not need multiple agents or a coordination framework. You need one agent that reads the right files at the right moment. The folder structure tells it what to do at each step.
+ICM is built on an observation that is almost too simple to write down: if the prompts and context for each stage of a workflow already exist as files in a well-organized folder hierarchy, you do not need multiple agents or a coordination framework. You need one agent that reads the right files at the right moment. The folder structure tells it what to do at each step.
 
 This is going backward before going forward. The principles that made Unix pipelines effective in the 1970s -- programs that do one thing, output of one becomes input of another, plain text as universal interface -- apply directly to AI agent orchestration today.
 
