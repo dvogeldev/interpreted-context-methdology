@@ -127,25 +127,25 @@ If you build a workspace for a client's weekly reporting workflow, handing it ov
 
 ## Where This Works
 
-MWP handles sequential multi-step workflows where a human reviews output at each stage. Content production pipelines. Research and analysis workflows. Monitoring and digest systems. Reporting processes. Training material development.
+ICM handles sequential multi-step workflows where a human reviews output at each stage. Content production pipelines. Research and analysis workflows. Monitoring and digest systems. Reporting processes. Training material development.
 
 The common thread: these workflows are sequential (step 2 follows step 1), reviewable (a human should check each step's output), and repeatable (the same pipeline runs regularly with different input).
 
 ## Where This Does Not Work
 
-MWP is not a replacement for multi-agent frameworks in every context.
+ICM is not a replacement for multi-agent frameworks in every context.
 
 **Real-time multi-agent collaboration** -- where agents need to communicate dynamically in tight loops -- requires message-passing infrastructure that frameworks like AutoGen provide. File-based handoffs are too slow for this.
 
-**High-concurrency systems** -- where many users hit the same pipeline simultaneously -- need queueing, state isolation, and deployment infrastructure. MWP is local-first by design.
+**High-concurrency systems** -- where many users hit the same pipeline simultaneously -- need queueing, state isolation, and deployment infrastructure. ICM is local-first by design.
 
-**Complex branching logic** -- where automated decisions mid-pipeline determine the next step -- is awkward in MWP. A human can make branching decisions between stages, but automated branching would require scripting that moves MWP toward being a framework itself.
+**Complex branching logic** -- where automated decisions mid-pipeline determine the next step -- is awkward in ICM. A human can make branching decisions between stages, but automated branching would require scripting that moves ICM toward being a framework itself.
 
-The claim is not that MWP replaces existing tools across the board. The claim is that for a large and common class of workflows, the existing tools provide more complexity than the problem requires, and that complexity has real costs.
+The claim is not that ICM replaces existing tools across the board. The claim is that for a large and common class of workflows, the existing tools provide more complexity than the problem requires, and that complexity has real costs.
 
 ## A Note on MCP
 
-It is worth distinguishing MWP from Anthropic's Model Context Protocol (MCP). MCP standardizes how models access external tools and data sources -- the integration problem between AI systems and the services they need to call. MWP addresses a different layer: how to structure and deliver context to an agent across a multi-stage workflow. The two are complementary. An MWP stage might use MCP connections to access external services, while the stage's folder structure determines what context the agent receives when doing so.
+It is worth distinguishing ICM from Anthropic's Model Context Protocol (MCP). MCP standardizes how models access external tools and data sources -- the integration problem between AI systems and the services they need to call. ICM addresses a different layer: how to structure and deliver context to an agent across a multi-stage workflow. The two are complementary. An ICM stage might use MCP connections to access external services, while the stage's folder structure determines what context the agent receives when doing so.
 
 ---
 
@@ -167,11 +167,11 @@ Each stage produces an output file. You can edit that file before moving on. The
 |-----------|-------------|--------|
 | [script-to-animation](workspaces/script-to-animation/) | Content idea through script writing, animation spec, and Remotion code | 3 |
 | [course-deck-production](workspaces/course-deck-production/) | Unstructured material (PDFs, papers, notes) into polished PowerPoint slide decks | 5 |
-| [workspace-builder](workspaces/workspace-builder/) | Build a new MWP workspace for any domain | 5 |
+| [workspace-builder](workspaces/workspace-builder/) | Build a new ICM workspace for any domain | 5 |
 
 ## Build Your Own Workspace
 
-The workspace-builder is a workspace whose output is a new workspace. It follows MWP conventions to produce workspaces that follow MWP conventions.
+The workspace-builder is a workspace whose output is a new workspace. It follows ICM conventions to produce workspaces that follow ICM conventions.
 
 1. `cd workspaces/workspace-builder`
 2. Type `setup` to describe your domain
@@ -226,7 +226,7 @@ Every workspace follows 15 patterns defined in [`_core/CONVENTIONS.md`](_core/CO
 - **Repeatable workflow.** Something you or others will run many times, not a one-off task.
 - **Clear stage boundaries.** Each stage produces a distinct artifact that a human might want to review or edit before proceeding.
 - **System-level setup.** The questionnaire configures the production system (identity, design, preferences), not a specific run.
-- **Follows MWP conventions.** The workspace-builder enforces this automatically. See [`_core/CONVENTIONS.md`](_core/CONVENTIONS.md) for the full spec.
+- **Follows ICM conventions.** The workspace-builder enforces this automatically. See [`_core/CONVENTIONS.md`](_core/CONVENTIONS.md) for the full spec.
 
 ### PR checklist
 
@@ -247,7 +247,7 @@ Every workspace follows 15 patterns defined in [`_core/CONVENTIONS.md`](_core/CO
 
 ## Origin
 
-MWP grew out of a [content production system](https://github.com/RinDig/Content-Agent-Routing-Promptbase) that applies separation of concerns to AI context windows instead of code modules. That system runs a full content operation: scripting, animation specs, Remotion builds, brand management. MWP is the general-purpose version -- the structural patterns extracted so anyone can scaffold their own workflows.
+ICM grew out of a [content production system](https://github.com/RinDig/Content-Agent-Routing-Promptbase) that applies separation of concerns to AI context windows instead of code modules. That system runs a full content operation: scripting, animation specs, Remotion builds, brand management. ICM is the general-purpose version -- the structural patterns extracted so anyone can scaffold their own workflows.
 
 For the academic treatment, see [Model Workspace Protocol: Folder Structure as Agent Architecture](link-to-paper) (Van Clief, 2026).
 
