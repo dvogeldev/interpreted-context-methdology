@@ -119,6 +119,12 @@
 - **Store a `.env.example` file** with all required variable names (but no values) so the project can be set up without guessing.
   - _Why: Documents what environment variables exist without exposing actual secrets._
 
+- **Environment-specific .env files:** Use `.env` for production only unless this is a local-only project. For local development, use `.env.development` or similar environment-specific files. Never commit actual `.env` files to version control.
+  - _Why: Prevents accidental exposure of production secrets and clarifies which environment variables belong to which deployment target._
+
+- **Branch strategy for local development:** When developing locally, work in the `dev` branch unless overridden by project-specific requirements. Create feature branches from `dev` for new work.
+  - _Why: Provides a stable integration branch for local development while keeping `main` as the production-ready code._
+
 - **Enable Row-Level Security (RLS) on every database table.** No exceptions. Every table with user data must have RLS policies that scope reads and writes to the authenticated user's own data.
   - _Why: Without RLS, any authenticated user can potentially read or modify any row in the table. RLS is the last line of defense against data leaks._
 

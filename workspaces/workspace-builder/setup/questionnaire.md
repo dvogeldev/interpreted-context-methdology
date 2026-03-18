@@ -23,6 +23,16 @@ Read this file when the user types "setup". Ask ALL questions below in a single 
 - Purpose: Helps Stage 01 ask the right depth of questions
 - Note: This is an estimate. The actual stages will be refined during discovery.
 
+### Q5: What deployment environments will this project use (e.g., local, staging, production) and where will environment variables be managed?
+- Type: free text
+- Purpose: Determines how to handle .env files and branch strategy for the generated workspace
+- Examples: "Local development only with .env.development", "Local -> Staging -> Production with .env for production only", "Local development with .env.local, staging with .env.staging, production with .env"
+
+### Q6: What is the preferred branch strategy for local development?
+- Type: free text
+- Purpose: Establishes git workflow conventions for the generated workspace
+- Examples: "Work in dev branch, feature branches from dev", "Work in main directly for small projects", "Use trunk-based development with short-lived branches"
+
 ---
 
 ## After Onboarding

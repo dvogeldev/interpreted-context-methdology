@@ -15,28 +15,32 @@ Understand the domain workflow through conversation with the user.
 1. Ask the user to describe their workflow end to end. What do they start with? What do they end with?
 2. Identify the distinct stages. Where does one task end and another begin? Look for natural handoff points where a human might want to review or edit before continuing.
 3. For each stage, ask:
-   - What goes in? (files, user input, previous stage output)
-   - What comes out? (the artifact this stage produces)
-   - What does the agent need to know? (reference material, rules, constraints)
+    - What goes in? (files, user input, previous stage output)
+    - What comes out? (the artifact this stage produces)
+    - What does the agent need to know? (reference material, rules, constraints)
 4. Identify shared context. What information is used across multiple stages? (brand voice, design system, audience data)
 5. Identify user-specific details. What varies from one user to another? (brand name, colors, audience, platform). These become placeholder variables.
 6. Identify optional stages. Are there stages some users might skip? These become conditional sections.
 7. Identify tool prerequisites. For each stage, ask: does this stage need any external tools to work? (e.g., Node.js, Python, LibreOffice, ffmpeg). For each tool, note: which stage needs it, whether it is required or optional, and what it does. These become setup guides in the generated workspace.
 8. Discover relevant skills. Based on the domain, search for Claude Code skills that would give agents domain-specific knowledge:
-   a. Scan `~/.claude/skills/` and `~/.agents/skills/` for locally installed skills that match the domain
-   b. Search GitHub for popular skill repos (e.g., "remotion skill", "pptx skill", "[domain] claude skill")
-   c. Present candidates to the user with a brief description of what each skill provides
-   d. Let the user pick which skills to bundle into the workspace
-   e. Note: skills can replace custom reference docs and prerequisites when they cover the same ground (e.g., a pptx skill bundles scripts that would otherwise need a separate install step)
-9. **[Checkpoint]** -- Present the workflow map draft to the user. Ask: Are all stages captured? Any missing inputs or outputs? Any stages to combine or split?
-10. Run the audit checks below. If any fail, revise before saving.
-11. Write the workflow map summarizing everything discovered.
+    a. Scan `~/.claude/skills/` and `~/.agents/skills/` for locally installed skills that match the domain
+    b. Search GitHub for popular skill repos (e.g., "remotion skill", "pptx skill", "[domain] claude skill")
+    c. Present candidates to the user with a brief description of what each skill provides
+    d. Let the user pick which skills to bundle into the workspace
+    e. Note: skills can replace custom reference docs and prerequisites when they cover the same ground (e.g., a pptx skill bundles scripts that would otherwise need a separate install step)
+9. **Ask about deployment environments and branch strategy:**
+    - What deployment environments will this project use (e.g., local, staging, production) and where will environment variables be managed?
+    - What is the preferred branch strategy for local development?
+    These answers will inform environment-specific file handling and git workflow conventions.
+10. **[Checkpoint]** -- Present the workflow map draft to the user. Ask: Are all stages captured? Any missing inputs or outputs? Any stages to combine or split?
+11. Run the audit checks below. If any fail, revise before saving.
+12. Write the workflow map summarizing everything discovered.
 
 ## Checkpoints
 
 | After Step | Agent Presents | Human Decides |
 |------------|---------------|---------------|
-| 8 | Draft workflow map: all stages with inputs/outputs, shared context, variables, tools, skills | Whether the stage breakdown, handoff points, and shared context are correct |
+| 9 | Draft workflow map: all stages with inputs/outputs, shared context, variables, tools, skills | Whether the stage breakdown, handoff points, and shared context are correct |
 
 ## Audit
 
