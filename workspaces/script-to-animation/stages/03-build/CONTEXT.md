@@ -9,6 +9,7 @@ Take an animation spec and produce Remotion component code.
 
 | Source | File/Location | Section/Scope | Why |
 |--------|--------------|---------------|-----|
+ | Universal coding rules | `../../../shared/vibe-code-rules.md` | Full document | Enforce production-quality standards, git workflow, security, file size limits, and no-scope-creep rules on every coding task |
 | Previous stage | `../02-spec/output/` | Most recent spec file (full) | The spec to implement |
 | Reference | `references/build-conventions.md` | Full file | File structure, naming, beat/composition patterns |
 | Skill | `../../skills/remotion-best-practices/SKILL.md` | Index, then load rule files as needed | Remotion APIs, animations, timing, sequencing, transitions |
@@ -17,6 +18,7 @@ Take an animation spec and produce Remotion component code.
 | Stage 02 reference | `../02-spec/references/design-system.md` | "Colors" and "Typography" sections | Exact values for code |
 | Reference | `references/remotion-setup.md` | Full file | Project setup, rendering, troubleshooting |
 
+0. Before any code is written, read ../../../shared/vibe-code-rules.md in full (Layer 3) and treat every rule as non-negotiable.
 ## Process
 
 1. Read the spec from `../02-spec/output/`

@@ -5,6 +5,7 @@ Build .pptx files from session outlines using the html2pptx pipeline. One JS fil
 ## Inputs
 
 | Source | File/Location | Section/Scope | Why |
+ | Universal coding rules | `../../../shared/vibe-code-rules.md` | Full document | Enforce production-quality standards, git workflow, security, file size limits, and no-scope-creep rules on every coding task |
 |--------|--------------|---------------|-----|
 | Previous stage | `../03-outline/output/[session-slug]-outline.md` | Full file | Slide content to generate |
 | Design system | `../../design-system/CONTEXT.md` | Routes to palette, typography | Colors, fonts, spacing values |
@@ -12,6 +13,7 @@ Build .pptx files from session outlines using the html2pptx pipeline. One JS fil
 | Skill | `../../skills/pptx/html2pptx.md` | Full file | HTML syntax, PptxGenJS API, chart/table examples |
 | Skill | `../../skills/frontend-design/SKILL.md` | Full file | Design thinking, aesthetics, avoiding generic look |
 | Reference | `references/build-conventions.md` | Full file | JS file structure and naming |
+0. Before any code is written, read ../../../shared/vibe-code-rules.md in full (Layer 3) and treat every rule as non-negotiable.
 
 ## Process
 

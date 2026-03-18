@@ -8,6 +8,7 @@
 
 | Source | File/Location | Section/Scope | Why |
 |--------|--------------|---------------|-----|
+ | Universal coding rules | `../../../shared/vibe-code-rules.md` | Full document | Enforce production-quality standards, git workflow, security, file size limits, and no-scope-creep rules on every coding task |
 | Previous stage | `../0N-prev/output/artifact.md` | Full file | The artifact to work from |
 | Reference | `references/example.md` | "Relevant Section" | What it provides |
 
@@ -24,6 +25,7 @@
      Too vague: "Generate ideas"
      Good: "Propose 3-5 concept angles, each as a single sentence. Tag each
             with its value type and format." -->
+0. Before any code is written, read ../../../shared/vibe-code-rules.md in full (Layer 3) and treat every rule as non-negotiable.
 
 1. Read the input artifact from the previous stage
 2. [Step two]
