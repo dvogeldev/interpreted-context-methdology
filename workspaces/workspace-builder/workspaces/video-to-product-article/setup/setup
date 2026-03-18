@@ -1,0 +1,13 @@
+#!/bin/bash
+# Setup command for video-to-product-article workspace
+# This script runs the onboarding questionnaire
+
+echo "Running setup for video-to-product-article workspace..."
+echo ""
+
+# Run the setup script
+./setup/setup.sh
+
+echo ""
+echo "Setup complete! You can now run the workspace stages."
+echo "To check your progress, type: status"
