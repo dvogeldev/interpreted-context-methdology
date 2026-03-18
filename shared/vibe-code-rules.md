@@ -119,7 +119,7 @@
 - **Store a `.env.example` file** with all required variable names (but no values) so the project can be set up without guessing.
   - _Why: Documents what environment variables exist without exposing actual secrets._
 
-- **Environment-specific .env files:** Use `.env` for production only unless this is a local-only project. For local development, use `.env.development` or similar environment-specific files. Never commit actual `.env` files to version control.
+- **Environment-specific .env template files:** Create `.env.example` for production (unless local-only), `.env.staging.example` for staging, and `.env.dev.example` for development. Never commit actual `.env` files to version control.
   - _Why: Prevents accidental exposure of production secrets and clarifies which environment variables belong to which deployment target._
 
 - **Branch strategy for local development:** When developing locally, work in the `dev` branch unless overridden by project-specific requirements. Create feature branches from `dev` for new work.
