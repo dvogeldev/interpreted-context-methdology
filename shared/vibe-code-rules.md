@@ -48,8 +48,19 @@
 - **Commit after every working change.** Got a component rendering? Commit. Got an API call returning data? Commit. Do not wait until a full feature is done.
   - _Why: Small, frequent commits mean you can roll back to any working state instead of losing hours of progress._
 
-- **Write clear commit messages.** Format: `type: short description` (e.g., `feat: add coaching card component`, `fix: resolve mic bleed on mono downmix`, `refactor: extract audio utils to separate module`).
-  - _Why: Good commit messages are your breadcrumb trail when something breaks and you need to find when it started._
+- **Write clear commit messages.** Follow Conventional Commits specification (https://www.conventionalcommits.org). Format: `type(scope?): short description` (e.g., `feat: add coaching card component`, `fix(ui): resolve mic bleed on mono downmix`, `refactor(utils): extract audio utils to separate module`, `docs: update API reference`, `test: add integration tests for auth`). Use these types:
+  - `feat`: A new feature
+  - `fix`: A bug fix
+  - `docs`: Documentation only changes
+  - `style`: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+  - `refactor`: A code change that neither fixes a bug nor adds a feature
+  - `perf`: A code change that improves performance
+  - `test`: Adding missing tests or correcting existing tests
+  - `build`: Changes that affect the build system or external dependencies
+  - `ci`: Changes to CI configuration files and scripts
+  - `chore`: Other changes that don't modify src or test files
+  - `revert`: Reverts a previous commit
+  - _Why: Good commit messages are your breadcrumb trail when something breaks and you need to find when it started. Standardized commit messages enable automated changelog generation and semantic versioning._
 
   - **Push to the remote after every commit.** Do not wait to be asked. Every commit should be followed by `git push origin <current-branch>` automatically.
   - _Why: Local-only commits are invisible to deployment pipelines and provide no backup. Pushing immediately keeps the remote in sync and triggers any CI/CD._
